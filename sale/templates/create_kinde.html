@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div class="col-md-8 mb-30">
+        <div class="card card-statistics mb-30">
+            <div class="card-body">
+                <h5 class="card-title">نوع کالا</h5>
+                <form method="post" action="#" enctype=multipart/form-data>
+                    {% csrf_token %}
+
+                    <div class="form-row">
+                        <div class="col">
+                            {{ create_form.active.label }}
+                            {{ create_form.active }}
+                            {% for error in create_form.active.errors %}
+                                <div class="text-danger"><p>{{ error }}</p></div>
+                            {% endfor %}
+                        </div>
+                        <div class="col">
+                            {{ create_form.name.label }}
+                            {{ create_form.name }}
+                            {% for error in create_form.name.errors %}
+                                <div class="text-danger"><p>{{ error }}</p></div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">ثبت</button>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+</form>
+
+
+
+</body>
+</html>

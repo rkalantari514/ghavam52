@@ -1,0 +1,153 @@
+{% extends 'shared/_MainLayout.html' %}
+{% load jalali_tags %}
+{% load static %}
+{% block content %}
+    {% load humanize %}
+    {#    <div class="row">#}
+    <div class="col-md-8 mb-30">
+        <div class="card card-statistics mb-30">
+            <div class="card-body">
+                <h5 class="card-title">مشخصات قرارداد</h5>
+                <form method="post" action="#" enctype=multipart/form-data>
+                    {% csrf_token %}
+
+                    <div class="form-row">
+                        <div class="col">
+                            {{ create_form.product.label }}
+                            {{ create_form.product }}
+                            {% for error in create_form.product.errors %}
+                                <div class="text-danger"><p>{{ error }}</p></div>
+                            {% endfor %}
+                        </div>
+                        <div class="col">
+                            {{ create_form.seller.label }}
+                            {{ create_form.seller }}
+                            {% for error in create_form.seller.errors %}
+                                <div class="text-danger"><p>{{ error }}</p></div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-row">
+
+                        <div class="col">
+                            {{ create_form.gharardad_no.label }}
+                            {{ create_form.gharardad_no }}
+                            {% for error in create_form.gharardad_no.errors %}
+                                <div class="text-danger"><p>{{ error }}</p></div>
+                            {% endfor %}
+                        </div>
+
+
+                        <div class="col">
+                            {{ create_form.gharardad_price.label }}
+                            {{ create_form.gharardad_price }}
+                            {% for error in create_form.gharardad_price.errors %}
+                                <div class="text-danger"><p>{{ error }}</p></div>
+                            {% endfor %}
+                        </div>
+
+
+                    </div>
+                    <br>
+
+
+
+
+
+
+
+
+
+
+                    <div class="form-row">
+
+                        <div class="col">
+                            {{ create_form.gharardad_date.label }}
+                            {{ create_form.gharardad_date }}
+
+                        </div>
+
+                        <div class="col">
+                             {{ create_form.gharardad_end_date.label }}
+                            {{ create_form.gharardad_end_date }}
+                        </div>
+
+
+                        <div class="col">
+
+                        </div>
+
+
+                    </div>
+                    <br>
+                    <div class="form-row">
+                        <div class="col">
+                            {{ create_form.subject.label }}
+                            {{ create_form.subject }}
+                            {% for error in create_form.subject.errors %}
+                                <div class="text-danger"><p>{{ error }}</p></div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                    <br>
+
+
+
+                                <div class="form-row">
+
+                        <div class="col">
+                            {{ create_form.is_end.label }}
+                            {{ create_form.is_end }}
+
+                        </div>
+
+
+                        <div class="col">
+{{ create_form.khateme_date.label }}
+                            {{ create_form.khateme_date }}
+                        </div>
+
+
+                    </div>
+
+
+
+
+                    <button type="submit" class="btn btn-primary">ثبت</button>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    {#    </div>#}
+
+{% endblock %}
+
+
+
+{% block date %}
+    <link rel="stylesheet" href="{% static 'admin/jquery.ui.datepicker.jalali/themes/base/jquery-ui.min.css' %}">
+    <script src="{% static 'admin/js/django_jalali.min.js' %}"></script>
+    <script>
+        $('.time-picker').timepicker({
+            showMeridian: false
+        });
+
+    </script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
