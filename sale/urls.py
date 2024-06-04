@@ -1,6 +1,6 @@
 from django.urls import path
 
-from sale.views import creatkind
+from sale.views import creatkind, editkind,deletekind
 
 urlpatterns = [
     # path('', home_page,name="home"),
@@ -13,6 +13,7 @@ urlpatterns = [
     # path('testapi', testApi.as_view(), name="testapi"),
 
     path('sale/creatkind', creatkind, name="creatkind"),
-
+    path('sale/editkind/<kindid>', editkind, name="editkind"),
+    path('sale/deletekind/<kindid>', deletekind, name="deletekind"),
 ]
 
