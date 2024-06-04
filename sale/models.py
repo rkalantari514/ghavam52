@@ -5,9 +5,9 @@ from django.db import models
 class Producer(models.Model):
     active = models.BooleanField(default=True, verbose_name='فعال / غیر فعال')
     name = models.CharField(max_length=150, verbose_name='نام تولید کننده')
-    address = models.TextField(verbose_name='آدرس', null=True, blank=True)
-    email = models.TextField(verbose_name='ایمیل', null=True, blank=True)
-    phone = models.TextField(verbose_name='تلفن', null=True, blank=True)
+    address = models.CharField(max_length=300,verbose_name='آدرس', null=True, blank=True)
+    email = models.CharField(max_length=150,verbose_name='ایمیل', null=True, blank=True)
+    phone = models.CharField(max_length=150,verbose_name='تلفن', null=True, blank=True)
     class Meta:
         verbose_name = 'تولید کننده'
         verbose_name_plural = 'تولید کننده ها'

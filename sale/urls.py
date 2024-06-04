@@ -1,6 +1,6 @@
 from django.urls import path
 
-from sale.views import creatkind, editkind,deletekind
+from sale.views import create_kind, edit_kind, delete_kind, create_producer, edit_producer, delete_producer
 
 urlpatterns = [
     # path('', home_page,name="home"),
@@ -12,8 +12,13 @@ urlpatterns = [
     # path('article/<arid>', article,name="article"),
     # path('testapi', testApi.as_view(), name="testapi"),
 
-    path('sale/creatkind', creatkind, name="creatkind"),
-    path('sale/editkind/<kindid>', editkind, name="editkind"),
-    path('sale/deletekind/<kindid>', deletekind, name="deletekind"),
+    path('sale/creatkind', create_kind, name="creatkind"),
+    path('sale/editkind/<kindid>', edit_kind, name="editkind"),
+    path('sale/deletekind/<kindid>', delete_kind, name="deletekind"),
+
+    path('sale/creatproducer', create_producer, name="creatproducer"),
+    path('sale/editproducer/<proid>', edit_producer, name="editproducer"),
+    path('sale/deleteproducer/<proid>', delete_producer, name="deleteproducer"),
+
 ]
 
