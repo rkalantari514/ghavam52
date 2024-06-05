@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
+{% load jalali_tags %}
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -12,9 +14,9 @@
     {% csrf_token %}
 
 
-    {{ create_form.active.label }}
-    {{ create_form.active }}
-    {% for error in create_form.active.errors %}
+    {{ create_form.customer.label }}
+    {{ create_form.customer }}
+    {% for error in create_form.customer.errors %}
     {% endfor %}
     <br>
     <br>
@@ -26,25 +28,13 @@
     <br>
 
     <br>
-    {{ create_form.address.label }}
-    {{ create_form.address }}
-    {% for error in create_form.address.errors %}
+    {{ create_form.date.label }}
+    {{ create_form.date }}
+    {% for error in create_form.date.errors %}
     {% endfor %}
     <br>
 
-    <br>
-    {{ create_form.email.label }}
-    {{ create_form.email }}
-    {% for error in create_form.email.errors %}
-    {% endfor %}
-    <br>
 
-    <br>
-    {{ create_form.phone.label }}
-    {{ create_form.phone }}
-    {% for error in create_form.phone.errors %}
-    {% endfor %}
-    <br>
 
 
     <button type="submit" class="btn btn-primary">ثبت</button>
@@ -53,4 +43,17 @@
 
 
 </body>
+    <link rel="stylesheet" href="{% static 'admin/jquery.ui.datepicker.jalali/themes/base/jquery-ui.min.css' %}">
+    <script src="{% static 'admin/js/django_jalali.min.js' %}"></script>
+    <script>
+        $('.time-picker').timepicker({
+            showMeridian: false
+        });
+
+    </script>
+
+
+
+
+
 </html>

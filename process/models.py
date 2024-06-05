@@ -57,6 +57,7 @@ class Process(models.Model):
 
 class ProcessRow(models.Model):
     kala=models.ForeignKey(Kala, blank=True, null=True, on_delete=models.CASCADE ,verbose_name='کالا')
+    process=models.ForeignKey(Process, blank=True, null=True, on_delete=models.CASCADE ,verbose_name='فرآیند')
     number=models.IntegerField(default=0,verbose_name='تعداد ', null=True, blank=True)
     numberr=models.IntegerField(default=0,verbose_name=' تعداد راست', null=True, blank=True)
     numberl=models.IntegerField(default=0,verbose_name='تعداد چپ', null=True, blank=True)
@@ -65,8 +66,8 @@ class ProcessRow(models.Model):
     #
     # master_image = models.ImageField(upload_to=upload_about_us_image_path, null=True, blank=True, verbose_name='تصویر اصلی')
     class Meta:
-        verbose_name = 'ردیف حواله'
-        verbose_name_plural = 'ردیف های حواله'
+        verbose_name = 'ردیف فرآیند'
+        verbose_name_plural = 'ردیف های فرآیند'
 
 
 

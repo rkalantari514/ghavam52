@@ -1,5 +1,6 @@
 from django.urls import path
 
+from process.views import create_process
 from sale.views import create_kind, edit_kind, delete_kind, create_producer, edit_producer, delete_producer
 
 urlpatterns = [
