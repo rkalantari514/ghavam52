@@ -2,8 +2,11 @@ import datetime
 
 from django.db import models
 
+from sale.models import Kala
+
+
 # Create your models here.
-class Remittance(models.Model):
+class Havaleh(models.Model):
     date=models.DateField(default=datetime.date.today)
 
     #
@@ -18,9 +21,10 @@ class Remittance(models.Model):
     def __str__(self):
         return str(self.id)
 
-class RemittanceRow(models.Model):
+class HavalehRow(models.Model):
     numberin=models.IntegerField(default=0,verbose_name='تعداد ورود', null=True, blank=True)
-    remittance=models.ForeignKey(Remittance, blank=True, null=True, on_delete=models.CASCADE ,verbose_name='حواله')
+    remittance=models.ForeignKey(Havaleh, blank=True, null=True, on_delete=models.CASCADE ,verbose_name='حواله')
+    kala=models.ForeignKey(Kala, blank=True, null=True, on_delete=models.CASCADE ,verbose_name='کالا')
 
 
     #

@@ -35,7 +35,7 @@ class Kala(models.Model):
     kinde_kala=models.ForeignKey(Kinde_Kala, blank=True, null=True, on_delete=models.CASCADE ,verbose_name='نوع کالا')
     description = models.TextField(verbose_name='توضیحات', null=True, blank=True)
     last_price=models.IntegerField(verbose_name='آخرین قیمت', null=True, blank=True)
-    last_price_des = models.CharField(max_length=150, verbose_name='توضیحات آخرین قیمت')
+    last_price_des = models.CharField(max_length=150, verbose_name='توضیحات آخرین قیمت', null=True, blank=True)
     stock=models.IntegerField(default=0,verbose_name='موجودی انبار', null=True, blank=True)
     is_rl = models.BooleanField(default=False, verbose_name='راست و چپ دارد')
     stockr=models.IntegerField(default=0,verbose_name=' موجودی انبار راست', null=True, blank=True)

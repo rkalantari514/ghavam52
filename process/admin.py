@@ -1,10 +1,10 @@
 from django.contrib import admin
 
-from process.models import RemittanceRow, Remittance
+from process.models import HavalehRow, Havaleh
 
 
 # Register your models here.
-class RemittanceRowAdmin(admin.ModelAdmin):
+class HavalehRowAdmin(admin.ModelAdmin):
     list_display = ['__str__']
     # list_display = ['__str__','name1', 'name2']
     # list_filter =['name1', 'name2']
@@ -12,8 +12,8 @@ class RemittanceRowAdmin(admin.ModelAdmin):
     # search_fields =['name1', 'name2']
     # list_per_page = 20
     class Meta:
-        model = RemittanceRow
-class RemittanceAdmin(admin.ModelAdmin):
+        model = HavalehRow
+class HavalehAdmin(admin.ModelAdmin):
     list_display = ['__str__']
     # list_display = ['__str__','name1', 'name2']
     # list_filter =['name1', 'name2']
@@ -21,7 +21,7 @@ class RemittanceAdmin(admin.ModelAdmin):
     # search_fields =['name1', 'name2']
     # list_per_page = 20
     class Meta:
-        model = Remittance
+        model = Havaleh
 
-admin.site.register(RemittanceRow, RemittanceRowAdmin)
-admin.site.register(Remittance, RemittanceAdmin)
+admin.site.register(HavalehRow, HavalehRowAdmin)
+admin.site.register(Havaleh, HavalehAdmin)
