@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # my app
-    # 'jalali_date',
+    'jalali_date',
 
     'sale',
     'process'
