@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'jalali_date',
 
     'sale',
+    'process'
 
 ]
 
