@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<h5 class="card-title">فرآیند</h5>
+<form method="post" action="#" enctype=multipart/form-data>
+    {% csrf_token %}
+
+
+    {{ create_form.active.label }}
+    {{ create_form.active }}
+    {% for error in create_form.active.errors %}
+    {% endfor %}
+    <br>
+    <br>
+    <br>
+    {{ create_form.name.label }}
+    {{ create_form.name }}
+    {% for error in create_form.name.errors %}
+    {% endfor %}
+    <br>
+
+    <br>
+    {{ create_form.address.label }}
+    {{ create_form.address }}
+    {% for error in create_form.address.errors %}
+    {% endfor %}
+    <br>
+
+    <br>
+    {{ create_form.email.label }}
+    {{ create_form.email }}
+    {% for error in create_form.email.errors %}
+    {% endfor %}
+    <br>
+
+    <br>
+    {{ create_form.phone.label }}
+    {{ create_form.phone }}
+    {% for error in create_form.phone.errors %}
+    {% endfor %}
+    <br>
+
+
+    <button type="submit" class="btn btn-primary">ثبت</button>
+</form>
+
+
+
+</body>
+</html>
