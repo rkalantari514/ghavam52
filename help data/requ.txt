@@ -6,3 +6,8 @@ jdatetime==5.0.0
 sqlparse==0.5.0
 typing_extensions==4.12.1
 tzdata==2024.1
+
+
+
+pip install django
+pip install django-jalali-date
