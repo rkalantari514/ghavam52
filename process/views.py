@@ -17,7 +17,7 @@ def create_process(request, *args, **kwargs):
             date=create_form.cleaned_data.get('date'),
             customer=create_form.cleaned_data.get('customer'),
         )
-        return redirect(f"admin/process/process")
+        return redirect(f"/admin/process/process/")
     context = {
         'create_form': create_form,
     }
